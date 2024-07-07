@@ -1,0 +1,55 @@
+[gd_scene load_steps=10 format=3 uid="uid://srcvqhw8qsdt"]
+
+[ext_resource type="Script" path="res://ui/menus/game_over_menu.gd" id="1_652d7"]
+[ext_resource type="Texture2D" uid="uid://c5j4c32mofsa7" path="res://ui/menus/game_over_menu_sprites/background.png" id="2_uvnue"]
+[ext_resource type="Texture2D" uid="uid://bbx74t22uko8f" path="res://ui/menus/game_over_menu_sprites/game_over_text.png" id="3_diwys"]
+[ext_resource type="Texture2D" uid="uid://bro83xtdk0yt8" path="res://ui/menus/game_over_menu_sprites/buttons/try_again/try_again_normal.png" id="4_5newc"]
+[ext_resource type="Texture2D" uid="uid://l30185857h8o" path="res://ui/menus/game_over_menu_sprites/buttons/try_again/try_again_click.png" id="5_r23m3"]
+[ext_resource type="Texture2D" uid="uid://dievrppj5ceab" path="res://ui/menus/game_over_menu_sprites/buttons/try_again/try_again_hover.png" id="6_yfpu7"]
+[ext_resource type="Texture2D" uid="uid://ccg1vh4ha54i3" path="res://ui/menus/game_over_menu_sprites/buttons/back_to_menu/back_to_menu_normal.png" id="7_glx6p"]
+[ext_resource type="Texture2D" uid="uid://ysq2nnu0ljdm" path="res://ui/menus/game_over_menu_sprites/buttons/back_to_menu/back_to_menu_click.png" id="8_vwj7u"]
+[ext_resource type="Texture2D" uid="uid://dlu3n63wbga4y" path="res://ui/menus/game_over_menu_sprites/buttons/back_to_menu/back_to_menu_hover.png" id="9_qr4ih"]
+
+[node name="GameOverMenu" type="MarginContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_652d7")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("2_uvnue")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_top = 200
+theme_override_constants/margin_bottom = 200
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="GameOver" type="TextureRect" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_diwys")
+stretch_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+
+[node name="TryAgain" type="TextureButton" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("4_5newc")
+texture_pressed = ExtResource("5_r23m3")
+texture_hover = ExtResource("6_yfpu7")
+
+[node name="BackToMenu" type="TextureButton" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("7_glx6p")
+texture_pressed = ExtResource("8_vwj7u")
+texture_hover = ExtResource("9_qr4ih")
+
+[connection signal="button_up" from="MarginContainer/VBoxContainer/VBoxContainer/TryAgain" to="." method="_on_try_again_button_up"]
+[connection signal="button_up" from="MarginContainer/VBoxContainer/VBoxContainer/BackToMenu" to="." method="_on_back_to_menu_button_up"]

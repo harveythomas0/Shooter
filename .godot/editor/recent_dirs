@@ -1,0 +1,14 @@
+res://ui/hud
+res://ui/menus/main_menu_sprites/buttons/exit
+res://ui/menus/main_menu_sprites/buttons/options
+res://ui/menus/main_menu_sprites/buttons/play
+res://ui/menus/main_menu_sprites
+res://ui/menus
+res://player
+res://enemies
+res://bullets & projectiles
+res://enemies/fists_enemies
+res://ui/menus/game_over_menu_sprites/buttons/back_to_menu
+res://ui/menus/game_over_menu_sprites/buttons/try_again
+res://ui/menus/game_over_menu_sprites
+res://

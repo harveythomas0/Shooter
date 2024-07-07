@@ -1,0 +1,5 @@
+res://game.tscn
+res://player/player.tscn
+res://bullets & projectiles/bullet.tscn
+res://player/player.gd
+res://enemies/enemy_manager.gd

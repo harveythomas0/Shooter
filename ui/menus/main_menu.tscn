@@ -1,0 +1,71 @@
+[gd_scene load_steps=13 format=3 uid="uid://cd7fpb788akmd"]
+
+[ext_resource type="Script" path="res://ui/menus/main_menu.gd" id="1_pt2io"]
+[ext_resource type="Texture2D" uid="uid://bvqt8jmkyxq4e" path="res://ui/menus/main_menu_sprites/background.png" id="2_o3dod"]
+[ext_resource type="Texture2D" uid="uid://b6hbwdnpl0iaj" path="res://ui/menus/main_menu_sprites/shooter_text.png" id="3_bvubs"]
+[ext_resource type="Texture2D" uid="uid://bfjue3d3rgm2c" path="res://ui/menus/main_menu_sprites/buttons/play/play_normal.png" id="4_51iti"]
+[ext_resource type="Texture2D" uid="uid://dm4a3ga78qusf" path="res://ui/menus/main_menu_sprites/buttons/play/play_click.png" id="5_tkrye"]
+[ext_resource type="Texture2D" uid="uid://d2unx548bk74w" path="res://ui/menus/main_menu_sprites/buttons/play/play_hover.png" id="6_6snpv"]
+[ext_resource type="Texture2D" uid="uid://bkrek0hufiwes" path="res://ui/menus/main_menu_sprites/buttons/options/options_normal.png" id="7_6ty1t"]
+[ext_resource type="Texture2D" uid="uid://bcdiyqywogalu" path="res://ui/menus/main_menu_sprites/buttons/options/options_click.png" id="8_072ns"]
+[ext_resource type="Texture2D" uid="uid://du8vorgm1a31f" path="res://ui/menus/main_menu_sprites/buttons/options/options_hover.png" id="9_t21o0"]
+[ext_resource type="Texture2D" uid="uid://1rc5tm0lmo7w" path="res://ui/menus/main_menu_sprites/buttons/exit/exit_normal.png" id="10_qfmdm"]
+[ext_resource type="Texture2D" uid="uid://bibyv5w6at3gr" path="res://ui/menus/main_menu_sprites/buttons/exit/exit_click.png" id="11_84gft"]
+[ext_resource type="Texture2D" uid="uid://b1xlm5u2xhsno" path="res://ui/menus/main_menu_sprites/buttons/exit/exit_hover.png" id="12_dqf3c"]
+
+[node name="MainMenu" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pt2io")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("2_o3dod")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 135
+theme_override_constants/margin_top = 220
+theme_override_constants/margin_right = 135
+theme_override_constants/margin_bottom = 100
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="Shooter" type="TextureRect" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_bvubs")
+stretch_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+
+[node name="Play" type="TextureButton" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("4_51iti")
+texture_pressed = ExtResource("5_tkrye")
+texture_hover = ExtResource("6_6snpv")
+
+[node name="Options" type="TextureButton" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("7_6ty1t")
+texture_pressed = ExtResource("8_072ns")
+texture_hover = ExtResource("9_t21o0")
+
+[node name="Exit" type="TextureButton" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("10_qfmdm")
+texture_pressed = ExtResource("11_84gft")
+texture_hover = ExtResource("12_dqf3c")
+
+[connection signal="button_up" from="MarginContainer/VBoxContainer/VBoxContainer/Play" to="." method="_on_play_button_up"]
+[connection signal="button_up" from="MarginContainer/VBoxContainer/VBoxContainer/Exit" to="." method="_on_exit_button_up"]

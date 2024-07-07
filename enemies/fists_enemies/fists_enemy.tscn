@@ -1,0 +1,70 @@
+[gd_scene load_steps=9 format=3 uid="uid://cn1v7d1al7mgp"]
+
+[ext_resource type="Script" path="res://enemies/fists_enemies/fists_enemy.gd" id="1_jmk1m"]
+[ext_resource type="Texture2D" uid="uid://bri27vjm8nvox" path="res://enemies/fists_enemies/fists_enemy.svg" id="2_u6avu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ya4l"]
+atlas = ExtResource("2_u6avu")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ow3pb"]
+atlas = ExtResource("2_u6avu")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lnrpf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ya4l")
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ow3pb")
+}],
+"loop": false,
+"name": &"hit",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_54y4t"]
+radius = 22.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_udb6v"]
+radius = 7.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wxawy"]
+radius = 7.0
+
+[node name="FistsEnemy" type="CharacterBody2D"]
+script = ExtResource("1_jmk1m")
+attack_speed = 1.0
+speed = 150.0
+max_health = 5.0
+attack_damage = 2.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(8, 0)
+sprite_frames = SubResource("SpriteFrames_lnrpf")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_54y4t")
+
+[node name="AttackCooldown" type="Timer" parent="."]
+one_shot = true
+
+[node name="Fists" type="Area2D" parent="."]
+
+[node name="Left" type="CollisionShape2D" parent="Fists"]
+position = Vector2(22, -16)
+shape = SubResource("CircleShape2D_udb6v")
+
+[node name="Right" type="CollisionShape2D" parent="Fists"]
+position = Vector2(22, 16)
+shape = SubResource("CircleShape2D_wxawy")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animation_finished"]

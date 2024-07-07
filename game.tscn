@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://d1cf3404l36ml"]
+
+[ext_resource type="PackedScene" uid="uid://dbf5ws1ldxhp8" path="res://player/player.tscn" id="1_tmcsx"]
+[ext_resource type="Script" path="res://enemies/enemy_manager.gd" id="3_7en6h"]
+[ext_resource type="PackedScene" uid="uid://cbpev7dsjrvin" path="res://ui/hud/health_bar.tscn" id="4_shoot"]
+
+[sub_resource type="GDScript" id="GDScript_vpylr"]
+script/source = "extends Node2D
+
+
+func handle_bullet_spawn(bullet: Bullet, position: Vector2, rotation: float) -> void:
+	bullet.global_position = position
+	bullet.rotation = rotation
+	add_child(bullet)
+"
+
+[node name="Game" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_tmcsx")]
+position = Vector2(575, 335)
+
+[node name="BulletManager" type="Node2D" parent="."]
+script = SubResource("GDScript_vpylr")
+
+[node name="EnemyManager" type="Node2D" parent="."]
+script = ExtResource("3_7en6h")
+spawn_distance = 1500.0
+max_enemies = 6
+spawn_time = 1.0
+
+[node name="SpawnTimer" type="Timer" parent="EnemyManager"]
+one_shot = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HealthBar" parent="CanvasLayer" instance=ExtResource("4_shoot")]
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 144.0
+offset_bottom = 32.0
+scale = Vector2(1.5, 1.5)
+
+[connection signal="health_changed" from="Player" to="CanvasLayer/HealthBar" method="handle_health_changed"]
+[connection signal="player_has_shot" from="Player" to="BulletManager" method="handle_bullet_spawn"]

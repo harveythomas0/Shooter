@@ -1,0 +1,71 @@
+[gd_scene load_steps=9 format=3 uid="uid://dg1l3trd0qqld"]
+
+[ext_resource type="Texture2D" uid="uid://5dqnnkh1482e" path="res://enemies/fists_enemies/slow_fists_enemy.svg" id="1_sex3b"]
+[ext_resource type="Script" path="res://enemies/fists_enemies/fists_enemy.gd" id="1_shqkj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pegax"]
+atlas = ExtResource("1_sex3b")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d8bke"]
+atlas = ExtResource("1_sex3b")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lnrpf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pegax")
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d8bke")
+}],
+"loop": false,
+"name": &"hit",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_54y4t"]
+radius = 25.02
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_udb6v"]
+radius = 7.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wxawy"]
+radius = 7.0
+
+[node name="SlowFistsEnemy" type="CharacterBody2D"]
+script = ExtResource("1_shqkj")
+attack_speed = 0.5
+speed = 75.0
+max_health = 10.0
+attack_damage = 4.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(5, 0)
+sprite_frames = SubResource("SpriteFrames_lnrpf")
+animation = &"hit"
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_54y4t")
+
+[node name="AttackCooldown" type="Timer" parent="."]
+one_shot = true
+
+[node name="Fists" type="Area2D" parent="."]
+
+[node name="Left" type="CollisionShape2D" parent="Fists"]
+position = Vector2(25, -18)
+shape = SubResource("CircleShape2D_udb6v")
+
+[node name="Right" type="CollisionShape2D" parent="Fists"]
+position = Vector2(25, 18)
+shape = SubResource("CircleShape2D_wxawy")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animation_finished"]
