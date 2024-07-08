@@ -18,7 +18,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_elfq4")
 }],
 "loop": false,
-"name": &"default",
+"name": &"ar_default",
 "speed": 10.0
 }, {
 "frames": [{
@@ -26,7 +26,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_2ixbs")
 }],
 "loop": false,
-"name": &"shoot",
+"name": &"ar_shoot",
 "speed": 10.0
 }]
 
@@ -41,8 +41,8 @@ max_health = 10.0
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(40, 0)
 sprite_frames = SubResource("SpriteFrames_go5cj")
-animation = &"shoot"
-autoplay = "default"
+animation = &"ar_shoot"
+autoplay = "ar_default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_54y4t")
