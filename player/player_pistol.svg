@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="128"
+   height="127.99999"
+   viewBox="0 0 33.866667 33.866664"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+   sodipodi:docname="player_pistol.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="px"
+     inkscape:zoom="7.8312672"
+     inkscape:cx="76.6798"
+     inkscape:cy="79.233665"
+     inkscape:window-width="1920"
+     inkscape:window-height="991"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer2" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Base"
+     inkscape:groupmode="layer"
+     id="layer1"
+     style="display:inline">
+    <circle
+       style="fill:#f8c574;stroke:#000000;stroke-width:0.529167;stroke-dasharray:none"
+       id="path1"
+       cy="8.4666672"
+       cx="6.3500004"
+       r="6.0854168" />
+    <circle
+       style="display:inline;fill:#f8c574;stroke:#000000;stroke-width:0.529167;stroke-dasharray:none"
+       id="path1-9"
+       cy="25.4"
+       cx="6.3500004"
+       r="6.0854168" />
+    <path
+       d="M 5.0611898,19.741431 A 5.8208332,5.8208332 0 0 1 9.525,25.4 5.8208332,5.8208332 0 0 1 5.0270833,31.050301 5.8208332,5.8208332 0 0 0 6.35,31.220833 5.8208332,5.8208332 0 0 0 12.170833,25.4 5.8208332,5.8208332 0 0 0 6.35,19.579167 5.8208332,5.8208332 0 0 0 5.0611898,19.741431 Z"
+       style="display:inline;fill:#ff6a00;fill-opacity:1;stroke:#000000;stroke-width:0"
+       id="path13" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Pistol"
+     style="display:inline">
+    <rect
+       style="display:inline;fill:#694813;fill-opacity:1;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
+       id="rect1"
+       width="5.2916665"
+       height="1.8520833"
+       x="13.493751"
+       y="7.5406251"
+       rx="0.035514545"
+       ry="2.3185212e-15" />
+    <ellipse
+       style="display:inline;fill:#f8c574;stroke:#000000;stroke-width:0.529167;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;paint-order:normal"
+       id="path2-8"
+       cx="12.7"
+       cy="8.9958334"
+       rx="1.8520833"
+       ry="1.8520836" />
+    <rect
+       style="display:inline;fill:#694813;fill-opacity:1;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
+       id="rect1-8"
+       width="5.2916665"
+       height="1.8520833"
+       x="13.493751"
+       y="24.473959"
+       rx="0.035514545"
+       ry="2.3185212e-15" />
+    <ellipse
+       style="display:inline;fill:#f8c574;stroke:#000000;stroke-width:0.529167;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;paint-order:normal"
+       id="path2-8-6"
+       cx="12.766145"
+       cy="25.929167"
+       rx="1.8520833"
+       ry="1.8520836" />
+    <path
+       d="m 21.43125,23.944792 -2.645833,0.992187 v 0.926042 l 2.645833,0.992188 v -0.926042 -0.06615 -0.926042 -0.06614 z"
+       style="display:inline;fill:#ff6a00;fill-opacity:1;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
+       id="path10" />
+  </g>
+</svg>

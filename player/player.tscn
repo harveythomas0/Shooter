@@ -1,7 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://dbf5ws1ldxhp8"]
+[gd_scene load_steps=13 format=3 uid="uid://dbf5ws1ldxhp8"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_x3fwd"]
-[ext_resource type="Texture2D" uid="uid://ffh6gc16inm3" path="res://player/player.svg" id="2_57slr"]
+[ext_resource type="Texture2D" uid="uid://ffh6gc16inm3" path="res://player/player_ar.svg" id="2_57slr"]
+[ext_resource type="Texture2D" uid="uid://6emcckgdqbjs" path="res://player/player_pistol.svg" id="3_whx3i"]
+[ext_resource type="Texture2D" uid="uid://c5rj5bh414ohr" path="res://player/player_shotgun.svg" id="4_54xcm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_elfq4"]
 atlas = ExtResource("2_57slr")
@@ -9,6 +11,22 @@ region = Rect2(0, 0, 128, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2ixbs"]
 atlas = ExtResource("2_57slr")
+region = Rect2(0, 64, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gxevx"]
+atlas = ExtResource("3_whx3i")
+region = Rect2(0, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ccj2a"]
+atlas = ExtResource("3_whx3i")
+region = Rect2(0, 64, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kslce"]
+atlas = ExtResource("4_54xcm")
+region = Rect2(0, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_84mt2"]
+atlas = ExtResource("4_54xcm")
 region = Rect2(0, 64, 128, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_go5cj"]
@@ -28,6 +46,38 @@ animations = [{
 "loop": false,
 "name": &"ar_shoot",
 "speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gxevx")
+}],
+"loop": false,
+"name": &"pistol_default",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ccj2a")
+}],
+"loop": false,
+"name": &"pistol_shoot",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kslce")
+}],
+"loop": false,
+"name": &"shotgun_default",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_84mt2")
+}],
+"loop": false,
+"name": &"shotgun_shoot",
+"speed": 10.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_54y4t"]
@@ -41,14 +91,11 @@ max_health = 10.0
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(40, 0)
 sprite_frames = SubResource("SpriteFrames_go5cj")
-animation = &"ar_shoot"
+animation = &"shotgun_default"
 autoplay = "ar_default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_54y4t")
-
-[node name="ShootMarker" type="Marker2D" parent="."]
-position = Vector2(68, 0)
 
 [node name="AttackCooldown" type="Timer" parent="."]
 wait_time = 0.1

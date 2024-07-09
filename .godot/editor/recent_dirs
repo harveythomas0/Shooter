@@ -1,10 +1,11 @@
+res://enemies/wave
+res://player
 res://ui/hud
 res://ui/menus/main_menu_sprites/buttons/exit
 res://ui/menus/main_menu_sprites/buttons/options
 res://ui/menus/main_menu_sprites/buttons/play
 res://ui/menus/main_menu_sprites
 res://ui/menus
-res://player
 res://enemies
 res://bullets & projectiles
 res://enemies/fists_enemies
