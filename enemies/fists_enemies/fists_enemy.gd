@@ -7,6 +7,7 @@ extends Enemy
 @onready var attack_cooldown: Timer = $AttackCooldown
 @onready var fists: Area2D = $Fists
 
+
 func _ready():
 	super._ready()
 	attack_cooldown.wait_time = 1 / attack_speed

@@ -14,6 +14,7 @@ Order for parameters:
 class_name Guns
 
 
-var pistol: Gun = Gun.new(5, 1, 1, 1, 500, 2, "pistol_default", "pistol_shoot", Vector2(48, 0))
-var assault_rifle: Gun = Gun.new(10, 1, 1, 3, 500, 3, "ar_default", "ar_shoot", Vector2(69, 0))
-var shotgun: Gun = Gun.new(2, 1, 4, 10, 500, 0.75, "shotgun_default", "shotgun_shoot", Vector2(72, 0))
+var pistol: Gun = Gun.new(3, 1, 1, 1, 500, 2, "pistol_default", "pistol_shoot", Vector2(48, 0))
+var assault_rifle: Gun = Gun.new(8, 1, 1, 3, 500, 3, "ar_default", "ar_shoot", Vector2(58, 0))
+var shotgun: Gun = Gun.new(2, 1, 4, 10, 500, 0.75, "shotgun_default", "shotgun_shoot", Vector2(57, 0))
+var sniper: Gun = Gun.new(1, 5, 1, 0, 1000, 4, "sniper_default", "sniper_shoot", Vector2(58, 0))

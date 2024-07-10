@@ -1,37 +1,39 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1720625828
-game.tscn::PackedScene::8988655891500162447::1720558722::0::1::::<><>::uid://dbf5ws1ldxhp8::::res://player/player.tscn<>res://enemies/enemy_manager.gd<>uid://cbpev7dsjrvin::::res://ui/hud/health_bar.tscn
+::res://::1720645511
+game.tscn::PackedScene::8988655891500162447::1720637444::0::1::::<><>::uid://dbf5ws1ldxhp8::::res://player/player.tscn<>res://bullets & projectiles/bullet_manager.gd<>res://enemies/enemy_manager.gd<>uid://cbpev7dsjrvin::::res://ui/hud/health_bar.tscn
 icon.svg::CompressedTexture2D::1840135388618933611::1719651448::1719651453::1::::<><>::
-::res://bullets & projectiles/::1720558722
+::res://bullets & projectiles/::1720637444
 bullet.gd::GDScript::-1::1720526523::0::1::::Bullet<>Area2D<>::
 bullet.svg::CompressedTexture2D::2941940423676851854::1720191889::1720340730::1::::<><>::
-bullet.tscn::PackedScene::871160113512674325::1720558722::0::1::::<><>::uid://bh6dlgjirwj4q::::res://bullets & projectiles/bullet.svg<>res://bullets & projectiles/bullet.gd
+bullet.tscn::PackedScene::871160113512674325::1720637444::0::1::::<><>::uid://bh6dlgjirwj4q::::res://bullets & projectiles/bullet.svg<>res://bullets & projectiles/bullet.gd
+bullet_manager.gd::GDScript::-1::1720627587::0::1::::<>Node2D<>::
 crosshair.png::CompressedTexture2D::1085625222108577437::1720294534::1720340730::1::::<><>::
 crosshair.svg::CompressedTexture2D::6877229649035034041::1720294536::1720340730::1::::<><>::
 ::res://enemies/::1720558761
-enemy.gd::GDScript::-1::1720279045::0::1::::Enemy<>CharacterBody2D<>::
-enemy_manager.gd::GDScript::-1::1720558761::0::1::::EnemyManager<>Node2D<>::
+enemy.gd::GDScript::-1::1720626670::0::1::::Enemy<>CharacterBody2D<>::
+enemy_manager.gd::GDScript::-1::1720627186::0::1::::EnemyManager<>Node2D<>::
 enemy_manager.tscn::PackedScene::-1::1720110515::0::1::::<><>::
-::res://enemies/fists_enemies/::1720342353
-fists_enemy.gd::GDScript::-1::1720280822::0::1::::FistsEnemy<>Enemy<>::
+::res://enemies/fists_enemies/::1720627785
+fists_enemy.gd::GDScript::-1::1720627785::0::1::::FistsEnemy<>Enemy<>::
 fists_enemy.svg::CompressedTexture2D::3597843669265233663::1719740377::1720340282::1::::<><>::
 fists_enemy.tscn::PackedScene::5740302556290166459::1720342353::0::1::::<><>::res://enemies/fists_enemies/fists_enemy.gd<>uid://bri27vjm8nvox::::res://enemies/fists_enemies/fists_enemy.svg
 quick_fists_enemy.svg::CompressedTexture2D::4036339324677533919::1720206714::1720340282::1::::<><>::
 quick_fists_enemy.tscn::PackedScene::2433710331237307160::1720342352::0::1::::<><>::res://enemies/fists_enemies/fists_enemy.gd<>uid://bxrh6ik3rmypr::::res://enemies/fists_enemies/quick_fists_enemy.svg
 slow_fists_enemy.svg::CompressedTexture2D::2112853828213745542::1720209986::1720340282::1::::<><>::
 slow_fists_enemy.tscn::PackedScene::7634787848038510057::1720342353::0::1::::<><>::uid://5dqnnkh1482e::::res://enemies/fists_enemies/slow_fists_enemy.svg<>res://enemies/fists_enemies/fists_enemy.gd
-::res://enemies/wave/::1720558761
-wave.gd::GDScript::-1::1720557978::0::1::::Wave<>Node2D<>::
-wave.tscn::PackedScene::4755786421729344330::1720558761::0::1::::<><>::res://enemies/wave/wave.gd
-::res://guns/::1720526701
-gun.gd::GDScript::-1::1720526617::0::1::::Gun<>RefCounted<>::
-guns.gd::GDScript::-1::1720526701::0::1::::Guns<>RefCounted<>::
-::res://player/::1720558722
-player.gd::GDScript::-1::1720526455::0::1::::Player<>CharacterBody2D<>::
-player.tscn::PackedScene::7241634566826464771::1720558722::0::1::::<><>::res://player/player.gd<>uid://ffh6gc16inm3::::res://player/player_ar.svg<>uid://6emcckgdqbjs::::res://player/player_pistol.svg<>uid://c5rj5bh414ohr::::res://player/player_shotgun.svg
-player_ar.svg::CompressedTexture2D::361746804973664856::1720517136::1720517136::1::::<><>::
+::res://enemies/wave/::1720637444
+wave.gd::GDScript::-1::1720626644::0::1::::Wave<>Node2D<>::
+wave.tscn::PackedScene::4755786421729344330::1720637444::0::1::::<><>::res://enemies/wave/wave.gd
+::res://guns/::1720637436
+gun.gd::GDScript::-1::1720627620::0::1::::Gun<>RefCounted<>::
+guns.gd::GDScript::-1::1720637436::0::1::::Guns<>RefCounted<>::
+::res://player/::1720637444
+player.gd::GDScript::-1::1720636447::0::1::::Player<>CharacterBody2D<>::
+player.tscn::PackedScene::7241634566826464771::1720637444::0::1::::<><>::res://player/player.gd<>uid://ffh6gc16inm3::::res://player/player_ar.svg<>uid://6emcckgdqbjs::::res://player/player_pistol.svg<>uid://c5rj5bh414ohr::::res://player/player_shotgun.svg<>uid://l5656q6w5j8l::::res://player/player_sniper.svg
+player_ar.svg::CompressedTexture2D::361746804973664856::1720636715::1720636717::1::::<><>::
 player_pistol.svg::CompressedTexture2D::2184843960068246712::1720517118::1720517120::1::::<><>::
-player_shotgun.svg::CompressedTexture2D::6914201189788744223::1720518931::1720518937::1::::<><>::
+player_shotgun.svg::CompressedTexture2D::6914201189788744223::1720636959::1720636960::1::::<><>::
+player_sniper.svg::CompressedTexture2D::835946067612870081::1720637411::1720637413::1::::<><>::
 ::res://ui/::1720340054
 ::res://ui/hud/::1720341951
 health_bar.gd::GDScript::-1::1720206020::0::1::::<>TextureProgressBar<>::

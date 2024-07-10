@@ -15,7 +15,7 @@ extends Node2D
 func _ready():
 	var new_wave: Wave = wave_scene.instantiate()
 	new_wave.init(
-		50,
+		500,
 		{
 			fists_enemy: 0.5,
 			quick_fists_enemy: 0.35,

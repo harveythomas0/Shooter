@@ -40,6 +40,7 @@ radius = 4.5
 radius = 4.0
 
 [node name="QuickFistsEnemy" type="CharacterBody2D"]
+motion_mode = 1
 script = ExtResource("1_0x1g3")
 attack_speed = 2.0
 speed = 225.0

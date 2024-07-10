@@ -1,12 +1,8 @@
-res://enemies/enemy_manager.gd
-res://guns/gun.gd
-res://guns/guns.gd
-res://enemies/enemy.gd
-res://enemies/wave/wave.gd
-res://bullets & projectiles/bullet.gd
-res://player/player.gd
-res://enemies/wave/wave.tscn
-res://bullets & projectiles/bullet_manager.gd
-res://game.tscn
 res://player/player.tscn
+res://enemies/enemy_manager.gd
+res://game.tscn
 res://bullets & projectiles/bullet.tscn
+res://enemies/wave/wave.tscn
+res://enemies/fists_enemies/fists_enemy.tscn
+res://enemies/fists_enemies/quick_fists_enemy.tscn
+res://enemies/fists_enemies/slow_fists_enemy.tscn

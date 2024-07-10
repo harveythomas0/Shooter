@@ -13,7 +13,7 @@ signal health_changed(new_health: float)
 @onready var bullet: PackedScene = preload("res://bullets & projectiles/bullet.tscn")
 
 @onready var arsenal = Guns.new()
-@onready var gun: Gun = arsenal.shotgun	
+@onready var gun: Gun = arsenal.sniper	
 
 @onready var health: float = max_health:
 	set(new_value):
@@ -29,6 +29,15 @@ func _physics_process(delta: float):
 	move_and_slide()
 	
 	look_at(get_global_mouse_position())
+	
+	if Input.is_key_pressed(KEY_1):
+		gun = arsenal.pistol
+	elif Input.is_key_pressed(KEY_2):
+		gun = arsenal.assault_rifle
+	elif Input.is_key_pressed(KEY_3):
+		gun = arsenal.shotgun
+	elif Input.is_key_pressed(KEY_4):
+		gun = arsenal.sniper
 	
 	if Input.is_action_pressed("shoot"):
 		shoot()
