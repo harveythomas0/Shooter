@@ -27,20 +27,24 @@ func _init(_fire_rate: float, _bullet_damage: float, _bullet_number: int, _bulle
 	end_of_gun = _end_of_gun
 
 
-func shoot(position: Vector2, rotation: float, bullet: PackedScene, bullet_manager: Node2D, attack_cooldown: Timer,
-		animated_sprite: AnimatedSprite2D) -> void:
+func shoot(player_position: Vector2, rotation: float, bullet: PackedScene, attack_cooldown: Timer,
+		animated_sprite: AnimatedSprite2D) -> Array:
 	if not attack_cooldown.is_stopped():
-		return
+		return []
+	
+	var bullets: Array = []
 
 	for i in range(bullet_number):
 		var new_bullet: Bullet = bullet.instantiate()
-		new_bullet.init(position + end_of_gun.rotated(rotation), rotation, bullet_speed, bullet_damage, bullet_kill_time)
+		new_bullet.init(player_position + end_of_gun.rotated(rotation), rotation, bullet_speed, bullet_damage, bullet_kill_time)
 		apply_spread(new_bullet)
-		bullet_manager.add_child(new_bullet)
+		bullets.append(new_bullet)
 	
 	attack_cooldown.start(1 / fire_rate)
 	
 	animated_sprite.play(shoot_anim_name)
+
+	return bullets
 
 
 func apply_spread(bullet: Bullet) -> void:

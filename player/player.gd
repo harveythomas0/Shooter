@@ -2,6 +2,7 @@ class_name Player
 extends CharacterBody2D
 
 
+signal player_has_shot(bullets: Array)
 signal health_changed(new_health: float)
 
 @export var speed: float
@@ -9,7 +10,6 @@ signal health_changed(new_health: float)
 
 @onready var attack_cooldown: Timer = $AttackCooldown
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
-@onready var bullet_manager: Node2D = get_parent().get_node("BulletManager")
 @onready var bullet: PackedScene = preload("res://bullets & projectiles/bullet.tscn")
 
 @onready var arsenal = Guns.new()
@@ -42,7 +42,10 @@ func _input(event):
 
 
 func shoot():
-	gun.shoot(position, rotation, bullet, bullet_manager, attack_cooldown, animated_sprite)
+	emit_signal(
+		"player_has_shot",
+		gun.shoot(position, rotation, bullet, attack_cooldown, animated_sprite)
+	)
 
 
 func _on_animation_finished():

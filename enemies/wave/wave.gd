@@ -55,7 +55,9 @@ func decide_enemy() -> Enemy:
 	
 	for enemy: PackedScene in enemy_to_cumulative_spawn_prob.keys():
 		if random_num <= enemy_to_cumulative_spawn_prob[enemy]:
-			return enemy.instantiate()
+			var new_enemy: Enemy = enemy.instantiate()
+			new_enemy.init(player)
+			return new_enemy
 	
 	return null
 

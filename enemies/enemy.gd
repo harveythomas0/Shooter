@@ -7,9 +7,13 @@ extends CharacterBody2D
 @export var attack_damage: float
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
-@onready var player: Player = $/root/Game/Player
+@onready var player: Player
 
 var health: float
+
+
+func init(_player: Player):
+	player = _player
 
 
 func _ready():
