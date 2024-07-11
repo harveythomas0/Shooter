@@ -2,15 +2,20 @@ class_name Enemy
 extends CharacterBody2D
 
 
+signal died(score: float)
+
+
 @export var speed: float
 @export var max_health: float
 @export var attack_damage: float
+
+@export var score: float
 
 var centering_factor: float = 0.05
 var min_distance: float = 250
 var avoid_factor: float = 0.05
 var matching_factor: float = 0.05
-var chasing_factor: float = 0.3
+var chasing_factor: float = 0.4
 var smoothing_factor: float = 0.5
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
@@ -85,6 +90,7 @@ func handle_bullet_hit(damage: float) -> void:
 	
 	health -= damage
 	if health <= 0:
+		emit_signal("died", score)
 		queue_free()
 
 

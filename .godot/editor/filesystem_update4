@@ -9,3 +9,5 @@ res://enemies/fists_enemies/slow_fists_enemy.tscn
 res://enemies/wave/wave.gd
 res://enemies/enemy.gd
 res://enemies/enemyaisketch.gd
+res://enemies/enemy_manager.gd
+res://ui/hud/score.gd

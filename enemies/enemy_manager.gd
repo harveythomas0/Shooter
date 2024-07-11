@@ -18,8 +18,8 @@ func _ready():
 		500,
 		{
 			fists_enemy: 0.5,
-			quick_fists_enemy: 0.35,
-			slow_fists_enemy: 0.15
+			quick_fists_enemy: 0.3,
+			slow_fists_enemy: 0.2
 		},
 		1.5,
 		1500,

@@ -1,9 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://d1cf3404l36ml"]
+[gd_scene load_steps=8 format=3 uid="uid://d1cf3404l36ml"]
 
 [ext_resource type="PackedScene" uid="uid://dbf5ws1ldxhp8" path="res://player/player.tscn" id="1_tmcsx"]
 [ext_resource type="Script" path="res://bullets & projectiles/bullet_manager.gd" id="2_ap0qq"]
 [ext_resource type="Script" path="res://enemies/enemy_manager.gd" id="3_7en6h"]
 [ext_resource type="PackedScene" uid="uid://cbpev7dsjrvin" path="res://ui/hud/health_bar.tscn" id="4_shoot"]
+[ext_resource type="FontFile" uid="uid://d3ii74mwkadxv" path="res://ui/Cocogoose.otf" id="5_yrny0"]
+[ext_resource type="Script" path="res://ui/hud/score.gd" id="6_l7rvt"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_4bwgs"]
+line_spacing = 0.0
+font = ExtResource("5_yrny0")
+shadow_size = 0
+shadow_color = Color(0, 0, 0, 0.980392)
 
 [node name="Game" type="Node2D"]
 
@@ -18,12 +26,29 @@ script = ExtResource("3_7en6h")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="HealthBar" parent="CanvasLayer" instance=ExtResource("4_shoot")]
-offset_left = 16.0
-offset_top = 16.0
-offset_right = 144.0
-offset_bottom = 32.0
-scale = Vector2(1.5, 1.5)
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
 
-[connection signal="health_changed" from="Player" to="CanvasLayer/HealthBar" method="handle_health_changed"]
+[node name="HealthBar" parent="CanvasLayer/MarginContainer" instance=ExtResource("4_shoot")]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="Score" type="Label" parent="CanvasLayer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+text = "0"
+label_settings = SubResource("LabelSettings_4bwgs")
+horizontal_alignment = 2
+script = ExtResource("6_l7rvt")
+
+[connection signal="health_changed" from="Player" to="CanvasLayer/MarginContainer/HealthBar" method="handle_health_changed"]
 [connection signal="player_has_shot" from="Player" to="BulletManager" method="handle_bullets"]

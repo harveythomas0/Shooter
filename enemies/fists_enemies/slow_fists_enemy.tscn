@@ -46,6 +46,7 @@ attack_speed = 0.5
 speed = 75.0
 max_health = 10.0
 attack_damage = 4.0
+score = 250.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(5, 0)

@@ -1,14 +1,14 @@
+MarginContainer
+Label
 Marker2D
 Timer
 VBoxContainer
 TextureButton
 TextureRect
-MarginContainer
 HBoxContainer
 BoxContainer
 Button
 LinkButton
-Label
 RichTextLabel
 CollisionShape2D
 Area2D

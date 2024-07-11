@@ -5,6 +5,7 @@ extends Node2D
 signal wave_over
 
 @onready var spawn_timer: Timer = $SpawnTimer
+@onready var score: Label = $/root/Game/CanvasLayer/MarginContainer/Score
 
 var enemy_number: int
 var enemy_to_spawn_prob: Dictionary
@@ -61,6 +62,8 @@ func spawn_enemy() -> void:
 	add_child(new_enemy)
 	
 	new_enemy.global_position = spawn_pos + player.position
+	
+	new_enemy.connect("died", score.increase_score)
 
 
 func decide_enemy() -> Enemy:
