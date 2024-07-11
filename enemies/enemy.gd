@@ -11,6 +11,7 @@ var min_distance: float = 250
 var avoid_factor: float = 0.05
 var matching_factor: float = 0.05
 var chasing_factor: float = 0.3
+var smoothing_factor: float = 0.5
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var player: Player
@@ -27,11 +28,15 @@ func _ready():
 
 
 func update(positions: Array, velocities: Array) -> void:
+	var old_velocity: Vector2 = velocity
+	
 	move_towards_center(positions)
 	avoid_others(positions)
 	match_velocity(velocities)
 	chase_player()
-
+	
+	velocity = velocity * (1 - smoothing_factor) + old_velocity * smoothing_factor
+	
 	velocity = velocity.normalized() * speed
 	
 	move_and_slide()
