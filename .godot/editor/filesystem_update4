@@ -1,8 +1,10 @@
-res://player/player.tscn
-res://enemies/enemy_manager.gd
+res://enemies/fists_enemies/fists_enemy.tscn
+res://enemies/fists_enemies/fists_enemy.gd
 res://game.tscn
+res://player/player.tscn
 res://bullets & projectiles/bullet.tscn
 res://enemies/wave/wave.tscn
-res://enemies/fists_enemies/fists_enemy.tscn
 res://enemies/fists_enemies/quick_fists_enemy.tscn
 res://enemies/fists_enemies/slow_fists_enemy.tscn
+res://enemies/wave/wave.gd
+res://enemies/enemy.gd

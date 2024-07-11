@@ -28,6 +28,19 @@ func init(_enemy_number: int, _enemy_to_spawn_prob: Dictionary, _spawn_time: flo
 	calculate_cumulative_prob()
 
 
+func _physics_process(delta):
+	var enemies: Array = get_children().filter(
+		func(node):
+			return node is Enemy
+	)
+	
+	for enemy in enemies:
+		enemy.update(
+			enemies.map(func(enemy): return enemy.position),
+			enemies.map(func(enemy): return enemy.velocity)
+			)
+
+
 func _on_spawn_timer_timeout():
 	if enemies_spawned < enemy_number:
 		spawn_enemy()

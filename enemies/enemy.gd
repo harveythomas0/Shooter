@@ -6,6 +6,11 @@ extends CharacterBody2D
 @export var max_health: float
 @export var attack_damage: float
 
+var cohesion: float = 1
+var alignment: float = 0.2
+var separation: float = 30
+var follow: float = 2
+
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var player: Player
 
@@ -20,10 +25,31 @@ func _ready():
 	health = max_health
 
 
-func _physics_process(_delta: float) -> void:
-	var direction: Vector2 = (player.position - position).normalized()
+func update(positions: Array, velocities: Array) -> void:
+	var cohesion_vec: Vector2 = positions.reduce(func(acc, vec): return acc + vec.normalized()) / positions.size() - position
+	var alignment_vec: Vector2 = velocities.reduce(func(acc, vec): return acc + vec.normalized()) / velocities.size() - position
 	
-	velocity = direction * speed
+	cohesion_vec = cohesion_vec.normalized()
+	alignment_vec = alignment_vec.normalized()
+	
+	var separation_vec: Vector2 = Vector2.ZERO
+
+	for pos in positions:
+		if pos == position:
+			continue
+		
+		var opposite_vec: Vector2 = position - pos
+
+		if opposite_vec.length() < separation:
+			separation_vec += opposite_vec.normalized() * (separation - opposite_vec.length())
+	
+	var target_vec = (player.position - position).normalized()
+
+	velocity = ((cohesion_vec * cohesion + alignment_vec * alignment) + target_vec * follow) / 2 + separation_vec
+	
+	velocity = velocity.normalized() * speed
+	
+	print(velocity.normalized() - (player.position - position).normalized())
 	
 	move_and_slide()
 	

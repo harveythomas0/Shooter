@@ -13,8 +13,8 @@ func _ready():
 	attack_cooldown.wait_time = 1 / attack_speed
 
 
-func _physics_process(delta):
-	super._physics_process(delta)
+func update(positions: Array, velocities: Array):
+	super.update(positions, velocities)
 	handle_attack()
 
 
